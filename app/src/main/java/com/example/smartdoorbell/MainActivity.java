@@ -53,29 +53,30 @@ public class MainActivity extends AppCompatActivity {
 
     public void createNotification(){
 
-        Intent intent = new Intent();
-        PendingIntent pendingIntent = PendingIntent.getActivity(MainActivity.this,0,intent,0);
-
-        Notification notification = new Notification.Builder(getApplicationContext())
-                .setSmallIcon(R.drawable.ic_person)
-                .setContentTitle("Smart Door Bell")
-                .setContentText("Someone is at the door!")
-                .setContentIntent(pendingIntent).getNotification();
-
-        notificationManagerCompat.notify(1, notification);
+       //android bellow 9
+//        Intent intent = new Intent();
+//        PendingIntent pendingIntent = PendingIntent.getActivity(MainActivity.this,0,intent,0);
+//
+//        Notification notification = new Notification.Builder(getApplicationContext())
+//                .setSmallIcon(R.drawable.ic_person)
+//                .setContentTitle("Smart Door Bell")
+//                .setContentText("Someone is at the door!")
+//                .setContentIntent(pendingIntent).getNotification();
+//
+//        notificationManagerCompat.notify(1, notification);
 
 
 
         //for 9.0 ->
-//        Notification notification9 = new NotificationCompat.Builder(this, App.CHANNEL_1_ID)
-//                .setSmallIcon(R.drawable.ic_person)
-//                .setContentTitle("Smart Door Bell")
-//                .setContentText("Someone is at the door!")
-//                .setPriority(NotificationCompat.PRIORITY_HIGH)
-//                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
-//                .build();
-//
-//        notificationManagerCompat.notify(1, notification9);
+        Notification notification9 = new NotificationCompat.Builder(this, App.CHANNEL_1_ID)
+                .setSmallIcon(R.drawable.ic_person)
+                .setContentTitle("Smart Door Bell")
+                .setContentText("Someone is at the door!")
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .build();
+
+        notificationManagerCompat.notify(1, notification9);
     }
 
 }
