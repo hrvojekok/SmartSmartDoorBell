@@ -17,22 +17,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".FirebaseInstanceService">
+        <service android:name=".FirebaseInstanceServiceClass">
             <intent-filter>
-               <action android:name="com.google.firebase.INSTANCE_ID_EVENT">
-
-               </action>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"></action>
             </intent-filter>
         </service>
-
-        <service android:name=".FirebaseMessagingService">
+        <service android:name=".FirebaseMessagingServiceClass">
             <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT">
-
-                </action>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"></action>
             </intent-filter>
         </service>
-
     </application>
 
 </manifest>

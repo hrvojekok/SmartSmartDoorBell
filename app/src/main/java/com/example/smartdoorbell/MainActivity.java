@@ -4,11 +4,14 @@ import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,12 +40,15 @@ public class MainActivity extends AppCompatActivity {
 
         notificationManagerCompat = NotificationManagerCompat.from(this);
 
+        FirebaseApp.initializeApp(this);
+        Log.d("Firebase", "token "+ FirebaseInstanceId.getInstance().getToken());
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 createNotification();
+
             }
         });
     }

@@ -1,15 +1,17 @@
 package com.example.smartdoorbell;
 
-import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
 
+import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
-public class FirebaseMessagingService extends com.google.firebase.messaging.FirebaseMessagingService {
+public class FirebaseMessagingServiceClass extends FirebaseMessagingService {
+
+    public static final String CHANNEL_1_ID = "channel1";
 
     @Override
     public void onMessageReceived(RemoteMessage remoteMessage) {
@@ -18,7 +20,7 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         PendingIntent pendingIntent = PendingIntent.getActivity(this,0,intent,PendingIntent.FLAG_ONE_SHOT);
 
-        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this);
+        NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, CHANNEL_1_ID);
         notificationBuilder.setContentTitle("SmartDoorBell");
         notificationBuilder.setContentText(remoteMessage.getNotification().getBody());
         notificationBuilder.setSmallIcon(R.drawable.ic_person);

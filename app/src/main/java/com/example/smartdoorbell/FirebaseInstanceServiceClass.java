@@ -9,7 +9,7 @@ import com.google.firebase.iid.FirebaseInstanceIdService;
 
 import static android.support.constraint.Constraints.TAG;
 
-public class FirebaseInstanceService extends FirebaseInstanceIdService {
+public class FirebaseInstanceServiceClass extends FirebaseInstanceIdService {
 
     private static final String REG_TOKEN = "REG_TOKEN";
 
@@ -18,8 +18,10 @@ public class FirebaseInstanceService extends FirebaseInstanceIdService {
 
         String recentToken = FirebaseInstanceId.getInstance().getToken();
         Log.d(REG_TOKEN, recentToken);
-        Toast.makeText(getApplicationContext(),recentToken, Toast.LENGTH_LONG);
+        //Toast.makeText(getApplicationContext(),recentToken, Toast.LENGTH_LONG).show();
 
 
     }
+
+
 }
