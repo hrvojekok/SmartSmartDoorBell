@@ -5,7 +5,7 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.os.Build;
 
-public class App extends Application {
+public class Notification extends Application {
 
     public static final String CHANNEL_1_ID = "channel1";
 
@@ -24,7 +24,7 @@ public class App extends Application {
                     "Channel 1",
                     NotificationManager.IMPORTANCE_HIGH
             );
-            channel1.setDescription("This channel shows notificarions when someone is at the door.");
+            channel1.setDescription("This channel shows notifications when someone is at the door.");
 
             NotificationManager manager = getSystemService(NotificationManager.class);
             manager.createNotificationChannel(channel1);

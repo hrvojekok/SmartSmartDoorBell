@@ -1,8 +1,5 @@
 package com.example.smartdoorbell;
 
-import android.app.Notification;
-import android.app.PendingIntent;
-import android.content.Intent;
 import android.support.v4.app.NotificationCompat;
 import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -68,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         //for 9.0 ->
-        Notification notification9 = new NotificationCompat.Builder(this, App.CHANNEL_1_ID)
+        android.app.Notification notification9 = new NotificationCompat.Builder(this, Notification.CHANNEL_1_ID)
                 .setSmallIcon(R.drawable.ic_person)
                 .setContentTitle("Smart Door Bell")
                 .setContentText("Someone is at the door!")
